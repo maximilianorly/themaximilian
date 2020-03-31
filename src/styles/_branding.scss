@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+.branding {
+    &__brand-name {
+        font-family: $brand-font;
+        color: $brand-black;
+        opacity: 0.9;
+    }
+}

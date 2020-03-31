@@ -1,0 +1,96 @@
+@import './variables.scss';
+
+.parallax-body {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    perspective: 2px;
+    padding-top: 40vh;
+
+    &__section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $brand-dark-grey;
+        text-shadow: 0 0 5px #000;
+        font-family: $quote-font;
+    }
+
+    &__image {
+        &--container {
+            width: 30%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        &--content {
+            width: 75%;
+        }
+    }
+
+    &__coffee-beans {
+        height: 100%;
+        width: 100%
+    }
+
+    &__parallax::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateZ(-1px) scale(1.5);
+        background-size: 100%;
+        z-index: -1;
+    }
+
+    &__text {
+        &--grow {
+            animation: textGrow 2.5s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &__static {
+        background-color: white;
+    }
+
+    &__image-strip {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        &--image {
+            height: 100%;
+        }
+    }
+
+    &__bg0::after {
+        opacity: 0.5;
+    }
+
+    &__bg1::after {
+        background-image: url('../assets/coffee-beans.jpg');
+        background-repeat: no-repeat;
+        opacity: 0.5;
+    }
+
+    &__bg2::after {
+        background-image: url('../assets/coffee/coffee_cafeaulait.svg');
+        background-repeat: no-repeat;
+        opacity: 0.5;
+        height: 150%;
+    }
+}
+
+@keyframes textGrow {
+    from {
+        text-shadow: 0 0 5px #000;
+    }
+    to {
+        font-size: 5vh;
+        text-shadow: 0 0 0 ;
+    }
+}
